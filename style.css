@@ -1,4 +1,102 @@
-/* 基本のリセットと設定 */
+/* ===================== */
+/* 基本の設定           */
+/* ===================== */
+body {
+    font-family: 'Montserrat';
+    margin: 0;
+    padding: 5px;
+    background-color: #737570;
+    color: #fff;
+}
+
+/* ===================== */
+/* ヘッダー              */
+/* ===================== */
+    header#hero {
+        background-color: #3498db;
+        color: rgba(10, 6, 25, 0.143);
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    header {
+        font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+        header h1 {
+            margin-bottom: 5px;
+            font-size: 3em;
+        }
+
+/* ===================== */
+/* ナビゲーション        */
+/* ===================== */
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        nav li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+/* ===================== */
+/* セクション共通        */
+/* ===================== */
+    section {
+        padding: 50px 10%;
+        margin-bottom: 20px;
+        background-color: rgba(151, 159, 195, 0.873);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+/* ===================== */
+/* 作品（work-item）     */
+/* ===================== */
+    #works .work-item h3,
+    #works .work-item h4,
+    #works .work-item h5,
+    #works .work-item h6 {
+        color: #fff;
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-top: 18px;
+        margin-bottom: 8px;
+        border-left: 4px solid #3498db;
+        padding-left: 15px;
+    }
+
+        #works .work-item img {
+            width: 35%;
+            height: auto;
+            display: block;
+            margin: 12px auto;
+        }
+
+        .copyright {
+            font-size: 0.8em;
+            color: #7d7b7b;
+            text-align: center;
+            margin-top: 4px;
+        }
+
+/* ===================== */
+/* フッター              */
+/* ===================== */
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+    }
+/* 基本の設定 */
 body {
     font-family: 'Montserrat'; /* フォント */
     margin: 0;
