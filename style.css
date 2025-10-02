@@ -5,7 +5,7 @@ body {
     font-family: 'Montserrat';
     margin: 0;
     padding: 5px;
-    background-color: #737570;
+        background-color: #23232b; /* より暗めのグレー */
     color: #fff;
 }
 
@@ -143,7 +143,7 @@ nav a {
 section {
     padding: 50px 10%; /* 上下の余白と左右の余白 */
     margin-bottom: 20px;
-    background-color: rgba(151, 159, 195, 0.873);
+    background-color: rgba(40, 44, 52, 0.92); /* 暗めのセクション背景 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影で立体感を演出 */
 }
 
@@ -160,10 +160,11 @@ section {
 
  /* #worksセクション内の画像を小さく調整 */
   #works .work-item img {
-     width: 35%;
-     height: auto;
-     display: block;
-     margin: 12px auto;
+    width: 45%;
+    height: auto;
+    display: block;
+    margin: 12px auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25); /* 写真の雰囲気を崩さず浮き立たせる */
 }
 
    /* 各作品に著作権の表示を追加 */
@@ -189,6 +190,6 @@ section {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
+    background-color: #18181c;
     color: white;
 }
