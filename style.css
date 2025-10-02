@@ -1,0 +1,96 @@
+/* 基本のリセットと設定 */
+body {
+    font-family: 'Montserrat'; /* フォント */
+    margin: 0;
+    padding: 5px;
+    background-color: #737570; /* BGカラー */
+    color: #fff;
+}
+
+/* ヘッダーのスタイル */
+header#hero {
+    background-color: #3498db; /* メインカラー */
+    color: rgba(10, 6, 25, 0.143);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+header {
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+header h1 {
+    margin-bottom: 5px;
+    font-size: 3em;
+}
+
+/* ナビゲーションメニューのスタイル */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* セクション共通のスタイル */
+section {
+    padding: 50px 10%; /* 上下の余白と左右の余白 */
+    margin-bottom: 20px;
+    background-color: rgba(151, 159, 195, 0.873);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影で立体感を演出 */
+}
+
+/* ひと夏の思い出 */
+.work-item h3 {
+    border-left: 4px solid #3498db;
+    padding-left: 15px;
+    margin-bottom: 28px;
+     img {
+     width: 20%;
+     height: auto;
+     }
+     }
+
+ /* #worksセクション内の画像を小さく調整 */
+  #works .work-item img {
+     width: 35%;
+     height: auto;
+     display: block;
+     margin: 12px auto;
+}
+
+   /* 各作品に著作権の表示を追加 */
+   .copyright {
+       font-size: 0.8em;
+       color: #7d7b7b;
+       text-align: center;
+       margin-top: 4px;
+}
+
+/* 線香花火 */
+ .work-item h4 {
+      border-left: 4px solid #3498db;
+       padding-left: 15px;
+       margin-bottom: 28px;
+       img {
+       width: 20%;
+       height: auto;
+       }
+       }
+
+/* フッターのスタイル */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
