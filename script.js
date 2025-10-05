@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         worksTitle.addEventListener('mouseout', function() {
-            worksTitle.style.color = '#333'; // 元の色に戻す
+            worksTitle.style.color = ''; // CSS既定の色に戻す
         });
     }
 
