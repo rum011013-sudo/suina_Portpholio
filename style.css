@@ -147,6 +147,11 @@ section {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影で立体感を演出 */
 }
 
+/* Gallery 見出しの色を明示し、背景上で視認性を確保 */
+#works h2 {
+    color: #e6ebf5;
+}
+
 /* ひと夏の思い出 */
 .work-item h3 {
     border-left: 4px solid #3498db;
@@ -193,3 +198,157 @@ footer {
     background-color: #18181c;
     color: white;
 }
+
+/* ===================== */
+/* 横スクロールギャラリー  */
+/* ===================== */
+.horizontal-gallery {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.horizontal-gallery img {
+    height: 260px;
+    flex: 0 0 auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    scroll-snap-align: start;
+}
+
+/* スクロールバーの見た目（WebKit系） */
+.horizontal-gallery::-webkit-scrollbar {
+    height: 10px;
+}
+.horizontal-gallery::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.06);
+}
+.horizontal-gallery::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.25);
+    border-radius: 6px;
+}
+
+/* ===================== */
+/* ヘッダー: 新月の夜空   */
+/* ===================== */
+header#whose {
+    position: relative;
+    background-color: #07090d; /* ほぼ黒に近い深い群青 */
+    background-image:
+        radial-gradient(1200px 800px at 50% 120%, rgba(20,26,36,0.6) 0%, rgba(7,9,13,0.0) 60%),
+        radial-gradient(800px 600px at 50% -40%, rgba(12,14,20,0.55) 0%, rgba(7,9,13,0.0) 60%),
+        linear-gradient(180deg, #0a0d14 0%, #07090d 70%, #05070a 100%);
+    color: #e9ecf2;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: inset 0 -40px 120px rgba(0,0,0,0.65);
+}
+
+header#whose h1 {
+    color: #f2f5fa;
+    text-shadow: 0 0 10px rgba(255,255,255,0.08);
+}
+
+header#whose p {
+    color: #c9ced8;
+}
+
+header#whose nav a {
+    color: #d0d6e2;
+    transition: color 160ms ease, text-shadow 160ms ease;
+}
+
+header#whose nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.22);
+}
+
+/* 星の瞬きレイヤー */
+header#whose::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(1.4px 1.4px at 12% 22%, rgba(255,255,255,0.75) 0, rgba(255,255,255,0) 55%),
+        radial-gradient(1.2px 1.2px at 28% 64%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0) 55%),
+        radial-gradient(1.1px 1.1px at 44% 32%, rgba(255,255,255,0.55) 0, rgba(255,255,255,0) 55%),
+        radial-gradient(1.1px 1.1px at 62% 18%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0) 55%),
+        radial-gradient(1.2px 1.2px at 78% 52%, rgba(255,255,255,0.55) 0, rgba(255,255,255,0) 55%),
+        radial-gradient(1px 1px at 88% 28%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0) 55%),
+        radial-gradient(1px 1px at 16% 78%, rgba(255,255,255,0.45) 0, rgba(255,255,255,0) 55%),
+        radial-gradient(1.1px 1.1px at 36% 86%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0) 55%),
+        radial-gradient(1px 1px at 68% 72%, rgba(255,255,255,0.45) 0, rgba(255,255,255,0) 55%),
+        radial-gradient(1.2px 1.2px at 90% 70%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0) 55%);
+    animation: twinkle 7s ease-in-out infinite alternate;
+    opacity: 0.9;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.65; filter: brightness(0.9); }
+    50% { opacity: 0.98; filter: brightness(1); }
+    100% { opacity: 0.72; filter: brightness(0.95); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    header#whose::before {
+        animation: none;
+    }
+}
+
+/* 天の川レイヤー（控えめ・背面） */
+header#whose::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    /* 斜めに横切る淡い帯 + 粒状の星屑。中心にやや青白い芯を追加 */
+    background-image:
+        /* 幅広の淡い帯（下地） */
+        radial-gradient(420px 180px at 18% 64%, rgba(210,225,255,0.14) 0%, rgba(255,255,255,0) 64%),
+        radial-gradient(520px 200px at 36% 48%, rgba(220,232,255,0.13) 0%, rgba(255,255,255,0) 66%),
+        radial-gradient(420px 180px at 56% 37%, rgba(215,228,255,0.12) 0%, rgba(255,255,255,0) 64%),
+        radial-gradient(520px 200px at 77% 30%, rgba(210,225,255,0.11) 0%, rgba(255,255,255,0) 66%),
+        /* 青白い芯（ごく薄い青味） */
+        radial-gradient(260px 120px at 46% 46%, rgba(160,195,255,0.10) 0%, rgba(160,195,255,0) 70%),
+        radial-gradient(220px 100px at 58% 40%, rgba(170,205,255,0.09) 0%, rgba(170,205,255,0) 72%),
+        /* 星屑（細かな粒：帯の内側に集中） */
+        radial-gradient(2px 1.6px at 22% 60%, rgba(235,242,255,0.30) 0, rgba(235,242,255,0) 60%),
+        radial-gradient(1.6px 1.4px at 28% 57%, rgba(235,242,255,0.28) 0, rgba(235,242,255,0) 60%),
+        radial-gradient(1.8px 1.4px at 33% 52%, rgba(235,242,255,0.27) 0, rgba(235,242,255,0) 60%),
+        radial-gradient(1.6px 1.3px at 40% 50%, rgba(235,242,255,0.28) 0, rgba(235,242,255,0) 60%),
+        radial-gradient(1.9px 1.5px at 46% 46%, rgba(235,242,255,0.29) 0, rgba(235,242,255,0) 60%),
+        radial-gradient(1.7px 1.3px at 52% 42%, rgba(235,242,255,0.28) 0, rgba(235,242,255,0) 60%),
+        radial-gradient(2px 1.6px at 58% 39%, rgba(235,242,255,0.30) 0, rgba(235,242,255,0) 60%),
+        radial-gradient(1.5px 1.2px at 63% 36%, rgba(235,242,255,0.26) 0, rgba(235,242,255,0) 60%),
+        radial-gradient(1.8px 1.4px at 68% 34%, rgba(235,242,255,0.27) 0, rgba(235,242,255,0) 60%),
+        radial-gradient(1.6px 1.3px at 73% 32%, rgba(235,242,255,0.26) 0, rgba(235,242,255,0) 60%),
+        radial-gradient(1.9px 1.5px at 80% 30%, rgba(235,242,255,0.28) 0, rgba(235,242,255,0) 60%),
+        /* 追加の微小粒で粒立ちを強化 */
+        radial-gradient(1.2px 1.0px at 35% 54%, rgba(235,242,255,0.24) 0, rgba(235,242,255,0) 60%),
+        radial-gradient(1.3px 1.1px at 49% 44%, rgba(235,242,255,0.24) 0, rgba(235,242,255,0) 60%),
+        radial-gradient(1.1px 0.9px at 61% 38%, rgba(235,242,255,0.22) 0, rgba(235,242,255,0) 60%),
+        radial-gradient(1.2px 1.0px at 71% 33%, rgba(235,242,255,0.22) 0, rgba(235,242,255,0) 60%);
+    opacity: 0.46;
+    filter: blur(0.65px);
+    transform: rotate(-14deg) translateY(-4%);
+    transform-origin: 50% 50%;
+    mix-blend-mode: screen;
+    z-index: 1; /* 星層より背面 */
+}
+
+/* 星層を前面に固定 */
+header#whose::before { z-index: 2; }
